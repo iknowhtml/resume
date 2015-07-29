@@ -1,0 +1,33 @@
+body{
+	background-color:#F0F0F0;
+}
+
+.container{
+	background-color: white;
+	 box-shadow: 0 0 6px #ccc;
+}
+
+.cv-wrapper{
+	margin: 35px 65px;
+}
+
+.row{
+	margin:10px 0;
+	position: relative;
+}
+
+h1, h2, h3, p{
+	margin: 5px 0;
+}
+
+h1{
+	font-size: 300%;
+}
+
+p.date{
+	text-align: right;
+}
+
+ul{
+	margin: 0;
+}
