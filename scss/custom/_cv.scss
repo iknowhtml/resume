@@ -1,5 +1,33 @@
+/////font configurations/////
+$font-name: 'Raleway';
+$font-base-path: 'fonts/';
+////////////////////////////
+
+/////functions for managing fonts/////
+@function fontPath($style){
+  @return $font-base-path + $font-name + '/' + $font-name + '-'+ $style + '.ttf';
+}
+
+@mixin addFont($style){
+  @font-face{
+   font-family: 'Font-' + $style;
+   src: url(fontPath($style));
+  }
+}
+
+@include addFont('Regular');
+@include addFont('Thin');
+@include addFont('Bold');
+
+@mixin setFont($style){
+  font-family: 'Font-' + $style;
+}
+////////////////////////////////////
+
 body{
+	@include setFont('Regular');
 	background-color:#F0F0F0;
+	font-size: 90%;
 }
 
 .container{
@@ -13,30 +41,37 @@ body{
 
 section{
 	line-height: 25px;
-	border-bottom: 1px solid #000;
+	border-width: 90%;
 	padding-bottom: 10px;
 	margin: 0px 0 20px 0;
 }
 
 .row{
-	margin:10px 0;
+	margin: 3px 0;
 	position: relative;
 }
 
 h1, h2{
-text-align: center;
+	text-align: center;
+	border-top: 1px solid #000;
+	border-bottom: 2px solid #000;
 }
 
 h1, h2, h3, p{
-	margin: 5px 0;
+	padding:5px 0;
+	margin: 1px 0;
 }
 
 h1{
 	font-size: 300%;
+	padding-bottom:15px;
+	padding-top: 18px;
 }
 
 div.info{
-	margin-top: 15px;
+	padding: 0;
+	margin-top: -5px;
+	margin-bottom: -20px;
 	text-align: center;
 }
 
