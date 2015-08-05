@@ -14,16 +14,16 @@ body {
   line-height: 165%; }
   @media only screen and (max-width: 1200px) and (min-width: 993px) {
     body {
-      font-size: 70%; } }
+      font-size: 80%; } }
   @media only screen and (max-width: 992px) and (min-width: 769px) {
     body {
-      font-size: 50%; } }
+      font-size: 60%; } }
   @media only screen and (max-width: 768px) and (min-width: 481px) {
     body {
-      font-size: 30%; } }
+      font-size: 40%; } }
   @media only screen and (max-width: 480px) and (min-width: 0) {
     body {
-      font-size: 10%; } }
+      font-size: 20%; } }
 
 .container {
   background-color: white;
@@ -53,12 +53,13 @@ h1, h2 {
 h1 {
   text-transform: uppercase;
   font-size: 300%;
-  padding-bottom: 15px;
-  padding-top: 18px; }
+  padding-top: 3%;
+  padding-bottom: 2%; }
 
 h2 {
   font-size: 140%;
-  font-weight: bold; }
+  font-weight: bold;
+  padding: 0.5% 0; }
 
 h3 {
   font-weight: bold; }
@@ -71,6 +72,9 @@ div.info {
 
 p.date {
   text-align: right; }
+
+li {
+  word-wrap: break-word; }
 
 ul {
   margin: -5px 0; }
