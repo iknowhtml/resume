@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "compile-sass": "sass scss/cv.scss cv.css",
+    "watch-sass": "sass --watch scss/cv.scss:cv.css",
     "generate-resume": "node generate_pdf"
   },
   "devDependencies": {
