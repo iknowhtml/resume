@@ -38,6 +38,6 @@ pdf.create(HTML, options).toFile('./cv.pdf', (err, res) => {
   if (err) {
     return console.log(err);
   }
-  console.log(res);
+  console.log(`wrote resume to ${res.filename}!`);
   console.log('complete converting html to pdf!');
 });
