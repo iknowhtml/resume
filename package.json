@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "compile-sass": "sass scss/cv.scss cv.css",
-    "generate-pdf-resume": "node generate_pdf"
+    "generate-resume": "node generate_pdf"
   },
   "devDependencies": {
     "html-pdf": "^2.1.0",
