@@ -4,5 +4,14 @@
   "main": "index.html",
   "repository": "https://github.com/iknowhtml/resume",
   "author": "iknowhtml <iknowsmtp@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "compile-sass": "sass scss/cv.scss cv.css",
+    "generate-resume-pdf": "node generate_pdf"
+  },
+  "devDependencies": {
+    "html-pdf": "^2.1.0",
+    "jsdom": "^11.1.0"
+  },
+  "dependencies": {}
 }
