@@ -1,125 +1,121 @@
 /////font configurations/////
 $font-name: 'Raleway';
-$font-base-path: 'fonts/';
-////////////////////////////
-
+$font-base-path: 'fonts/'; ////////////////////////////
 /////functions for managing fonts/////
-@function fontPath($style){
-  @return $font-base-path + $font-name + '/' + $font-name + '-'+ $style + '.ttf';
+@function fontPath($style) {
+   @return $font-base-path + $font-name+'/' + $font-name + '-'+ $style + '.ttf';
 }
-
-@mixin addFont($style){
-  @font-face{
-   font-family: 'Font-' + $style;
-   src: url(fontPath($style));
+@mixin addFont($style) {
+   @font-face{
+    font-family: 'Font-' + $style;
+    src: url("fontPath($style)");
   }
 }
-
-@include addFont('Regular');
-@include addFont('Thin');
-@include addFont('Bold');
-
-@mixin setFont($style){
+@include addFont( 'Regular');
+@include addFont( 'Thin');
+@include addFont( 'Bold');
+@mixin setFont($style) {
   font-family: 'Font-' + $style;
 }
 ////////////////////////////////////
-
 /////media query functions//////
-@mixin media-query-horizontal($max_size, $min_size){
-  @media only screen and (max-width:#{$max_size}) and (min-width:#{$min_size}){
+@mixin media-query-horizontal($max_size, $min_size) {
+   @media only screen and (max-width:#{$max_size}) and (min-width:#{$min_size}){
     @content
   }
 }
 ////////////////////////////////
-
-body{
-	@include setFont('Regular');
-	background-color:#F0F0F0;
-	font-size: 90%;
-	line-height: 165%;
-	
-	@include media-query-horizontal($screen-lg, $screen-md + 1){
-		font-size: 80%;	
-	}
-
-	@include media-query-horizontal($screen-md, $screen-sm + 1){
-		font-size:60%;
-	}
-
-	@include media-query-horizontal($screen-sm, $screen-xs + 1){
-		font-size: 40%;
-	}
-
-	@include media-query-horizontal($screen-xs, 0){
-		font-size: 5%;
-	}
+@media print {
+  box-shadow: none;
 }
 
-.container{
-	background-color: white;
-	box-shadow: 0 0 6px #ccc;
+body {
+  @include setFont( 'Regular');
+  background-color: #F0F0F0;
+  font-size: 90%;
+  line-height: 165%;
+  @include media-query-horizontal($screen-lg, $screen-md + 1) {
+    font-size: 80%;
+  }
+  @include media-query-horizontal($screen-md, $screen-sm + 1) {
+    font-size: 60%;
+  }
+  @include media-query-horizontal($screen-sm, $screen-xs + 1) {
+    font-size: 40%;
+  }
+  @include media-query-horizontal($screen-xs, 0) {
+    font-size: 5%;
+  }
 }
 
-.cv-wrapper{
-	margin: 6% 7%;
+.container {
+  background-color: white;
+  box-shadow: 0 0 6px #ccc;
 }
 
-section{
-	border-width: 90%;
-	padding-bottom: 10px;
-	margin: 0px 0 20px 0;
+.cv-wrapper {
+  margin: 6% 7%;
 }
 
-.row{
-	margin: 3px 0;
-	position: relative;
+section {
+  border-width: 90%;
+  padding-bottom: 10px;
+  margin: 0 0 20px;
 }
 
-h1, h2, h3, p{
-	padding:5px 0;
-	margin: 1px 0;
+.row {
+  margin: 3px 0;
+  position: relative;
 }
 
-h1, h2{
-	text-align: center;
-	border-top: 1px solid #000;
-	border-bottom: 2px solid #000;
+h1,
+h2,
+h3,
+p {
+  padding: 5px 0;
+  margin: 1px 0;
 }
 
-
-h1{
-	text-transform: uppercase;
-	font-size: 300%;
-	padding-top: 3%;
-	padding-bottom:2%;
-	
+h1,
+h2 {
+  text-align: center;
+  border-top: 1px solid #000;
+  border-bottom: 2px solid #000;
 }
 
-h2{
-	font-size: 140%;
-	font-weight: bold;
-	padding: 0.5% 0;
+h1 {
+  text-transform: uppercase;
+  font-size: 300%;
+  padding-top: 3%;
+  padding-bottom: 2%;
 }
 
-h3{
-	font-weight:bold;
+h2 {
+  font-size: 140%;
+  font-weight: bold;
+  padding: 0.5% 0;
 }
 
-div.info{
-	padding: 0;
-	margin-top: -5px;
-	margin-bottom: -20px;
-	text-align: center;
+h3 {
+  font-weight: bold;
 }
 
-p.date{
-	text-align: right;
+div.info {
+  padding: 0;
+  margin-top: -5px;
+  margin-bottom: -20px;
+  text-align: center;
 }
 
-li{
-	word-wrap: break-word;
+p.date {
+  text-align: right;
 }
-ul{
-	margin: -5px 0;
-	padding: 0 10%;
+
+li {
+  word-wrap: break-word;
+}
+
+ul {
+  margin: -5px 0;
+  padding: 0 10%;
 }
