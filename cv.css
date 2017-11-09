@@ -37,6 +37,9 @@ section {
   margin: 3px 0;
   position: relative; }
 
+.sub-row {
+  margin-bottom: 5px; }
+
 h1,
 h2,
 h3,
@@ -62,10 +65,12 @@ h2 {
   font-weight: bold;
   padding: 0.5% 0; }
 
-h3 {
-  font-weight: bold; }
+.remove-bottom-spacing {
+  margin-bottom: 0;
+  padding-bottom: 0; }
 
 h4 {
+  font-size: 105%;
   margin: 0 0;
   padding: 0 0;
   margin-left: 3%;
