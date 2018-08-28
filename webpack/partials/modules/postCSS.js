@@ -16,11 +16,11 @@ const postCSS = (userOptions = {}) => {
   return config => {
     const MiniCssExtractPlugin = require('mini-css-extract-plugin');
     const defaultOptions = {
-      options: {},
+      filename: '[name].css',
       minimize: true,
     };
 
-    const { options, minimize } = Object.assign(
+    const { filename, minimize } = Object.assign(
       {},
       defaultOptions,
       userOptions,
@@ -52,7 +52,7 @@ const postCSS = (userOptions = {}) => {
           use: ['css-hot-loader', MiniCssExtractPlugin.loader, ...loaderList],
         },
         plugin: new MiniCssExtractPlugin({
-          filename: '[name].css',
+          filename,
           chunkFilename: '[id].css',
         }),
       },
