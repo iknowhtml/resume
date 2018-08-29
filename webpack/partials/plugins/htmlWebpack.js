@@ -2,15 +2,17 @@ import installPackages from '../../installPackages';
 
 import partial from '../partial';
 const htmlWebpack = (userOptions = {}) => {
-  installPackages(['html-webpack-plugin', 'html-webpack-template']);
+  installPackages([
+    'html-webpack-plugin',
+    ...(userOptions.template ? [] : ['html-webpack-template'])
+  ]);
   return config => {
     const htmlWebpackPlugin = require('html-webpack-plugin');
-    const htmlWebpackTemplate = require('html-webpack-template');
 
     const defaultOptions = {
       title: '',
       filename: 'index.html',
-      template: htmlWebpackTemplate,
+      template: userOptions.template ? null : require('html-webpack-template'),
       appMountId: 'app',
       inject: false,
       minify: {
