@@ -1,6 +1,5 @@
-.sass-cache
-*.css.map
-.DS_Store
+dist
 /node_modules
 yarn-error.log
 .vscode
+.DS_Store
