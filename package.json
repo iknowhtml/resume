@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "NODE_PATH=$(pwd) nodemon --watch webpack.config.babel.js --watch webpack --exec \"webpack-dev-server --watch --mode development --env.NODE_ENV=development\"",
-    "build": "",
+    "build": "yarn clean && NODE_PATH=$(pwd) webpack --progress --colors --mode production --env.NODE_ENV=production && rm dist/*.js",
     "clean": "rm -rf dist",
     "build:pdf": "node build_pdf"
   },
@@ -20,7 +20,6 @@
     "html-webpack-plugin": "^3.2.0",
     "html-webpack-template": "^6.2.0",
     "mini-css-extract-plugin": "^0.4.2",
-    "nodemon": "^1.18.3",
     "postcss-cli": "^6.0.0",
     "postcss-import": "^12.0.0",
     "postcss-loader": "^3.0.0",
