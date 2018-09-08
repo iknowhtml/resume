@@ -34,7 +34,7 @@ const HTML = buildHtml();
 
 console.log('complete building html!');
 console.log('converting html to pdf...');
-pdf.create(HTML, options).toFile('./cv.pdf', (err, res) => {
+pdf.create(HTML, options).toFile('./Aki\ Gao\ Resume.pdf', (err, res) => {
   if (err) {
     return console.log(err);
   }
