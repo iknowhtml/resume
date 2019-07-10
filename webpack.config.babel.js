@@ -29,10 +29,23 @@ const webpackConfiguration = (env, argv) => ({
             loader: MiniCssExtractPlugin.loader,
             options: {
               hmr: process.env.NODE_ENV === 'development',
+              reloadAll: true,
             },
           },
           'css-loader',
           'postcss-loader',
+        ],
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/',
+            },
+          },
         ],
       },
     ],
@@ -41,7 +54,7 @@ const webpackConfiguration = (env, argv) => ({
   plugins: [
     new HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      title: '',
+      title: "Aki Gao's Resume",
       filename: 'index.html',
       template: path.resolve('src', 'index.ejs'),
       minify:
@@ -55,7 +68,7 @@ const webpackConfiguration = (env, argv) => ({
               useShortDoctype: true,
             }
           : false,
-      hash: process.env.NODE_ENV === 'production',
+      hash: true,
       //Prevents automatic injection of CSS & HTML into template.
       inject: false,
     }),
