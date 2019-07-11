@@ -23,7 +23,7 @@ const webpackConfiguration = (env, argv) => ({
         },
       },
       {
-        test: /.css$/,
+        test: /.(post)?css$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -57,6 +57,7 @@ const webpackConfiguration = (env, argv) => ({
       title: "Aki Gao's Resume",
       filename: 'index.html',
       template: path.resolve('src', 'index.ejs'),
+      environment: process.env.NODE_ENV,
       minify:
         process.env.NODE_ENV === 'production'
           ? {
