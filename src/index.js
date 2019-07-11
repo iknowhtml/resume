@@ -1,2 +1,2 @@
-import './style.css';
+import './style.postcss';
 import 'typeface-raleway';
