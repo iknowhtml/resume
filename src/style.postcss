@@ -1,7 +1,123 @@
-:root {
-  --fontColor: blue;
+/* Basic CSS Reset */
+* {
+  padding: 0;
+  margin: 0;
 }
 
+html {
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
 body {
-  color: var(--fontColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+
+  @media print {
+    background-color: white;
+  }
+}
+
+.container {
+  max-width: 210mm;
+  background-color: white;
+  box-shadow: 0 0 6px #ccc;
+  margin: 0;
+  padding: 15mm 20mm;
+
+  @media print {
+    box-shadow: none;
+    padding: 6.5mm 10mm 0 10mm;
+  }
+}
+
+header {
+  border-top: 1px solid black;
+  border-bottom: 1.5px solid black;
+  text-align: center;
+  font-weight: normal;
+
+  /* Styling for headers not nested in the header section */
+  font-size: 1em;
+  padding-top: 0.1rem;
+  padding-bottom: 0.075em;
+}
+
+main {
+  padding: 0.625rem 0;
+
+  & li {
+    font-size: 0.75rem;
+    line-height: 1.25em;
+    list-style-type: none;
+    position: relative;
+    margin-top: 0.25em;
+    margin-left: 1.5em;
+
+    &:before {
+      content: '\2022';
+      font-size: 2em;
+      position: absolute;
+      left: -0.5em;
+    }
+  }
+}
+
+/* styles text inside of main */
+h3 {
+  font-size: 0.9rem;
+  font-weight: normal;
+
+  /* styles date */
+  & time {
+    float: right;
+    font-size: 0.75rem;
+  }
+}
+
+#header {
+  & header {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.75rem;
+    padding-top: 0.3em;
+    padding-bottom: 0.15em;
+  }
+}
+
+#info {
+  text-align: center;
+  font-size: 0.75em;
+  padding-top: 0.2em;
+  padding-bottom: 0.1em;
+}
+
+#profile {
+  & p {
+    font-size: 0.75rem;
+    line-height: 1.25em;
+  }
+}
+
+#skills {
+  & main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 0.5em;
+    grid-row-gap: 0.1em;
+  }
+
+  /* styles skill lists */
+  & section h3 ~ span {
+    display: block;
+    line-height: 1.25em;
+    font-size: 0.75rem;
+  }
+}
+
+#work-experience {
+  & section {
+    margin-bottom: 0.25em;
+  }
 }
