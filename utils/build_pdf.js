@@ -1,43 +1,38 @@
-const fs = require('fs');
-const pdf = require('html-pdf');
-const { JSDOM } = require('jsdom');
+const puppeteer = require('puppeteer');
+const path = require('path');
 
-const options = {
-  directory: '/tmp',
-  base: `file://${__dirname}/`,
-  height: '1553px',
-  width: '1200px',
-  orientation: 'portrait'
-};
+const generatePdf = async () => {
+  try {
+    console.log('launching headless browser...');
+    const browser = await puppeteer.launch();
 
-const buildHtml = () => {
-  const style = fs.readFileSync('./cv.css', 'utf8');
-  const dom = new JSDOM(fs.readFileSync('./index.html', 'utf8'));
+    console.log('opening new page...');
+    const page = await browser.newPage();
 
-  const body = dom.window.document.querySelector('body').innerHTML;
+    console.log(`navigating to file://${path.resolve('dist', 'index.html')}`);
+    await page.goto(`file://${path.resolve('dist', 'index.html')}`, {
+      waitUntil: 'networkidle0',
+    });
 
-  console.log('building html...');
+    console.log('generating pdf...');
+    console.log('writing pdf to disk...');
 
-  return (
-    '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">' +
-    '<title>Xiaoyu A. Gao Resume</title>' +
-    '<style type="text/css">' +
-    style +
-    '</style>' +
-    '</head><body style="font-family:">' +
-    body +
-    '</body></html>'
-  );
-};
+    const defaultMargin = '0.39in';
+    await page.pdf({
+      path: path.resolve('dist', "Aki Gao's Resume.pdf"),
+      margin: {
+        top: defaultMargin,
+        right: defaultMargin,
+        bottom: defaultMargin,
+        left: defaultMargin,
+      },
+    });
 
-const HTML = buildHtml();
-
-console.log('complete building html!');
-console.log('converting html to pdf...');
-pdf.create(HTML, options).toFile('./cv.pdf', (err, res) => {
-  if (err) {
-    return console.log(err);
+    await browser.close();
+    console.log('complete writing pdf to disk!');
+  } catch (e) {
+    console.log(e);
   }
-  console.log(`wrote resume to ${res.filename}!`);
-  console.log('complete converting html to pdf!');
-});
+};
+
+generatePdf();
