@@ -9,7 +9,7 @@ jobs:
       # specify container with the desired Node version 
       - image: circleci/node:latest
 
-      working_directory: ~/resume
+    working_directory: ~/resume
     steps:
       - checkout
 
