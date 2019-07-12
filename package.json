@@ -1,7 +1,8 @@
 {
   "scripts": {
     "start": "sleep 5s && open http://localhost:8080 & NODE_ENV=development nodemon --watch webpack.config.babel.js --exec \"webpack-dev-server --watch\"",
-    "build": "yarn clean && NODE_ENV=production webpack --progress --colors --mode production",
+    "build": "yarn clean && NODE_ENV=production webpack --progress --colors --mode production && yarn build:pdfx",
+    "deploy": "gh-pages -d dist",
     "build:pdf": "node utils/build_pdf",
     "clean": "rm -rf dist/*",
     "lint": "eslint \"src/**.js\" \"utils/**\""
@@ -18,6 +19,7 @@
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.1.0",
     "file-loader": "^4.0.0",
+    "gh-pages": "^2.0.1",
     "html-webpack-plugin": "^3.2.0",
     "jsdom": "^15.1.1",
     "mini-css-extract-plugin": "^0.7.0",
