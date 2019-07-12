@@ -10,7 +10,14 @@ jobs:
       - image: circleci/node:latest
 
     working_directory: ~/resume
+    branches:
+      only:
+        -master
     steps:
+      - add_ssh_keys:
+        fingerprints:
+           - "7c:80:74:bc:1d:9e:2e:1f:bb:6c:a4:4c:4c:56:0f:36"
+      
       - checkout
 
       # Load cached dependencies
@@ -32,4 +39,8 @@ jobs:
       # run build script
       - run: yarn build
 
-      
+      - deploy: 
+        command: |
+          git config user.email "iknowsmtp@gmail.com"
+          git config user.name "CircleCI Deployment Bot"
+          yarn deploy -m "Build \#${CIRCLE_BUILD_NUM} from ${CIRCLE_BUILD_URL}"
