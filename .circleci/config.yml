@@ -20,26 +20,28 @@ jobs:
       
       - checkout
 
-      # Load cached dependencies
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      # Download dependencies
-      - run: yarn install
-      
-      # Save dependencies to cache
+      - run: 
+          name: Install dependencies
+          command: yarn install
+          
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run build script
-      - run: yarn build
+      - run: 
+          name: Build project
+          command: yarn build
 
-      - deploy: 
+      - run:
+          name: Deploy to Github Pages
           command: |
             git config user.email "circleci-deployment-bot@iknowht.ml"
             git config user.name "circleci-deployment-bot"
