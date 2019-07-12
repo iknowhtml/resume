@@ -10,9 +10,7 @@ jobs:
       - image: circleci/node:latest
 
     working_directory: ~/resume
-    branches:
-      only:
-        - master
+    
     steps:
       - add_ssh_keys:
         fingerprints:
