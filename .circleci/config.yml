@@ -12,7 +12,7 @@ jobs:
     working_directory: ~/resume
     branches:
       only:
-        -master
+        - master
     steps:
       - add_ssh_keys:
         fingerprints:
