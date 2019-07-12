@@ -43,4 +43,4 @@ jobs:
           command: |
             git config user.email "circleci-deployment-bot@iknowht.ml"
             git config user.name "circleci-deployment-bot"
-            yarn deploy -m "Build \#${CIRCLE_BUILD_NUM} from commit ${CIRCLE_SHA1}"
+            yarn deploy -m "Build #${CIRCLE_BUILD_NUM} for ${CIRCLE_BUILD_URL} from commit ${CIRCLE_SHA1} [ci skip]"
