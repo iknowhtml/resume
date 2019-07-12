@@ -5,8 +5,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import TerserJSPlugin from 'terser-webpack-plugin';
 import OptimizeCssAssetsWebpackPlugin from 'optimize-css-assets-webpack-plugin';
 
-// Two parameters are passed in at bundle time, env & argv. argv contains all flags passed into webpack, including mode.
-const webpackConfiguration = (env, argv) => ({
+const webpackConfiguration = () => ({
   entry: path.resolve('src', 'index.js'),
   output: {
     path: path.resolve('dist'),
