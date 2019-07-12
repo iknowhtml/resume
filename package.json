@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "sleep 5s && open http://localhost:8080 & NODE_ENV=development nodemon --watch webpack.config.babel.js --exec \"webpack-dev-server --watch\"",
-    "build": "yarn clean && NODE_ENV=production webpack --progress --colors --mode production && yarn build:pdfx",
+    "build": "yarn clean && NODE_ENV=production webpack --progress --colors --mode production && yarn build:pdf && rm dist/index.js",
     "deploy": "gh-pages -d dist",
     "build:pdf": "node utils/build_pdf",
     "clean": "rm -rf dist/*",
