@@ -4,7 +4,10 @@ const path = require('path');
 const generatePdf = async () => {
   try {
     console.log('launching headless browser...');
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+      headless: true,
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    });
 
     console.log('opening new page...');
     const page = await browser.newPage();
