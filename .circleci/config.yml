@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify container with the desired Node version 
-      - image: circleci/node:latest
+      - image: circleci/node:latest-browsers
 
     working_directory: ~/resume
     branches:
