@@ -1,5 +1,5 @@
 # Aki Gao's Resume &middot; [![CircleCI](https://circleci.com/gh/iknowhtml/resume/tree/master.svg?style=shield)](https://circleci.com/gh/iknowhtml/resume/tree/master) 
-Aki Gao's resume written in HTML & CSS. Compiled with Webpack, and deployed to Github pages using CircleCI.
+Aki Gao's resume written in HTML & CSS with PDF generation. Compiled with Webpack, and deployed to Github pages using CircleCI.
 
 ## To Use
 To set up the project, run the following command below:
