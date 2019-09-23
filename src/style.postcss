@@ -4,14 +4,24 @@
   margin: 0;
 }
 
+@page {
+  size: letter;
+}
+
 html {
   box-sizing: border-box;
   font-family: 'Raleway', sans-serif;
 }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
   display: flex;
   justify-content: center;
-  align-items: center;
   background-color: #f0f0f0;
 
   @media print {
@@ -20,15 +30,20 @@ body {
 }
 
 .container {
-  max-width: 210mm;
+  height: calc(100vh + 10mm);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 900px;
   background-color: white;
   box-shadow: 0 0 6px #ccc;
   margin: 0;
-  padding: 15mm 20mm;
+  padding: 0 20mm;
 
   @media print {
+    height: 100vh;
     box-shadow: none;
-    padding: 6.5mm 10mm 0 10mm;
+    padding: 0 25mm;
   }
 }
 
@@ -96,7 +111,7 @@ h3 {
 #profile {
   & p {
     font-size: 0.75rem;
-    line-height: 1.25em;
+    line-height: 1.4em;
   }
 }
 
@@ -113,6 +128,7 @@ h3 {
     display: block;
     line-height: 1.25em;
     font-size: 0.75rem;
+    margin-top: 0.25em;
   }
 }
 
