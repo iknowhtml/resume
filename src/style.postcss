@@ -4,11 +4,8 @@
   margin: 0;
 }
 
-@page {
-  size: letter;
-}
-
 html {
+  height: 100%;
   box-sizing: border-box;
   font-family: 'Raleway', sans-serif;
 }
@@ -20,8 +17,10 @@ html {
 }
 
 body {
+  height: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: #f0f0f0;
 
   @media print {
@@ -32,17 +31,22 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  max-width: 900px;
+  padding: 20mm 20mm;
+  margin: auto;
+  max-width: 800px;
   background-color: white;
   box-shadow: 0 0 6px #ccc;
-  margin: 0;
-  padding: 15mm 20mm;
 
   @media print {
     height: 100vh;
     box-shadow: none;
     padding: 0 15mm;
+  }
+  @media (max-width: 700px) {
+    padding: 15mm 15mm;
+  }
+  @media (max-width: 500px) {
+    padding: 10mm 10mm;
   }
 }
 
