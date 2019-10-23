@@ -47,6 +47,17 @@ const webpackConfiguration = () => ({
           },
         ],
       },
+      {
+        test: /favicon.png$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'favicon.png',
+            },
+          },
+        ],
+      },
     ],
   },
   // Configures Plugins
