@@ -54,7 +54,8 @@ body {
   }
 }
 
-header {
+h1,
+h2 {
   border-top: 1px solid black;
   border-bottom: 1.5px solid black;
   text-align: center;
@@ -66,6 +67,7 @@ header {
   padding-bottom: 0.075em;
 }
 
+.section-container,
 main {
   padding: 0.625rem 0;
 
@@ -101,7 +103,7 @@ span {
   align-items: center;
 }
 #header {
-  & header {
+  & h1 {
     text-transform: uppercase;
     font-weight: 500;
     font-size: 1.75rem;
@@ -125,7 +127,7 @@ span {
 }
 
 #skills {
-  & main {
+  & .section-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 0.5rem;
