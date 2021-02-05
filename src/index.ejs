@@ -2,18 +2,20 @@
 <html lang="en">
 
 <head>
-  <title><%= htmlWebpackPlugin.options.title %></title>
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
   <link href="favicon.png" rel="shortcut icon" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale = 1" />
   <% for (key in htmlWebpackPlugin.files.css) { %>
-  <link href="<%= htmlWebpackPlugin.files.css[key] %>" rel="stylesheet" />
-  <% } %>
-  <% if(htmlWebpackPlugin.options.environment === 'development') { %>
-  <% for(key in htmlWebpackPlugin.files.chunks) { %>
-  <script src="<%= htmlWebpackPlugin.files.chunks[key].entry %>"></script>
-  <% } %>
-  <% } %>
+    <link href="<%= htmlWebpackPlugin.files.css[key] %>" rel="stylesheet" />
+    <% } %>
+      <% if(htmlWebpackPlugin.options.environment==='development' ) { %>
+        <% for(key in htmlWebpackPlugin.files.chunks) { %>
+          <script src="<%= htmlWebpackPlugin.files.chunks[key].entry %>"></script>
+          <% } %>
+            <% } %>
 </head>
 
 <body>
@@ -35,8 +37,9 @@
           habits of productive engineers, teams and organizations.
           I offer over
           three years of professional experience in
-          software development using the JavaScript ecosystem and functional programming paradigms in Agile (Scrum)
-          environments, including one year of professional experience in web & mobile accessibility.
+          software development using the JavaScript ecosystem and functional programming paradigms in Agile
+          environments, including one year of professional experience in web & mobile accessibility and one year of
+          remote work experience across international time zones.
       </div>
     </section>
     <section id="work-experience">
@@ -44,26 +47,49 @@
       <div class="section-container">
         <section>
           <span>
-            <h3> User1st - <em>Solutions Integrator</em>, Washington, D.C.</h3>
-            <time>January 2020 - Present</time>
+            <h3><em>User1st - Software Engineer</em>, Remote</h3>
+            <time>February 2021 - Present</time>
           </span>
           <ul>
-            <li>Remediate websites to comply with accessibility standards using User1st's uRemediate™ platform for 15+
+            <li>Implement new features and resolve bugs for Check1st, an automated web accessibility assessment
+              platform.</li>
+            <li>Coordinate directly with enterprise stakeholders to analyze requirements and communicate product
+              features
+              requests and issues
+              to
+              product
+              owner.</li>
+            <li>Lead instruction for developer oriented accessibility training with 20+ hours of instruction time.</li>
+            <li>Provide technical support to enterprise customers,
+              including a major wireless network operator and a domestic passenger rail road service, as well as
+              engineering support to sales.
+            </li>
+          </ul>
+          </li>
+          </ul>
+          </span>
+          <span>
+            <h3>User1st - <em>Solutions Integrator</em>, Washington, D.C./Remote</h3>
+            <time>January 2020 - February 2021</time>
+          </span>
+          <ul>
+            <li>Remediated websites to comply with accessibility standards using User1st's uRemediate™ platform for 20+
               clients, including a major
               wireless network operator and a Fortune 500 healthcare provider.
             </li>
-            <li>Audit client websites and mobile applications for compliance with the WCAG 2.1 AA standard
+            <li>Audited client websites and mobile applications for compliance with the WCAG 2.1 AA standard
               and Section 508 guidelines.
             </li>
-            <li>Create internal tooling to automate tasks & improve productivity including:
+            <li>Created internal tooling to automate tasks & improve productivity including:
               <ul>
                 <li>A command-line tool built with Node.js & Puppeteer to automate website URL discovery and
-                  auto-generate web page screenshots to streamline and improve accuracy for time estimations for
-                  clients.
+                  auto-generate web page screenshots to reduce time estimations by 33% and improve accuracy by 50%
+                  for
+                  client websites.
                 </li>
                 <li>A cross-browser extension built with the WebExtension browser API to inject runtime
                   environment for client sites without the neccessary uRemediate™ snippet installed to replace
-                  unreliable tooling.</li>
+                  unreliable tooling in 95% of use cases.</li>
               </ul>
             </li>
           </ul>
@@ -74,9 +100,6 @@
             <time>November 2017 - June 2018</time>
           </span>
           <ul>
-            <li>Provided full stack development capabilities and expertise for
-              work
-              ranging from UI design to smart contract development.</li>
             <li>Designed and developed the company's homepage, as well as landing pages and a user portal for several
               products.
             </li>
@@ -86,21 +109,6 @@
             </li>
           </ul>
         </section>
-        <section>
-          <span>
-            <h3>Booz Allen Hamilton - <em>Technologist</em>, Herndon, VA</h3>
-            <time>May 2017 - November 2017</time>
-          </span>
-          <ul>
-            <li>Developed proof of concept Blockchain (Ethereum) applications for various government
-              organizations,
-              including an intra-departmental financial transactions system for the U.S. Treasury and a
-              cryptographically-secured medical records system for the FDA.</li>
-            <li>Worked across the stack from front end & back end development, in React
-              and Express respectively, to the deployment pipelines to various cloud providers including AWS and
-              Azure.</li>
-          </ul>
-        </section>
       </div>
     </section>
     <section id="skills">
@@ -108,15 +116,15 @@
       <div class="section-container">
         <section>
           <h3>Languages:</h3>
-          <span>JavaScript, Shell (Bash)</span>
+          <span>JavaScript, TypeScript, Shell (Bash)</span>
         </section>
         <section>
           <h3>Development and Testing Tools:</h3>
-          <span>Git, Yarn, Webpack, Babel, Jest, ESlint</span>
+          <span>Git, NPM, Yarn, Webpack, Babel, Jest, ESlint</span>
         </section>
         <section>
           <h3>UX/UI & Front End Technologies:</h3>
-          <span>Figma, HTML, CSS, JQuery, React, Redux</span>
+          <span>Figma, HTML, CSS, React</span>
         </section>
         <section>
           <h3>Accessibility Tools & Technologies:</h3>
@@ -128,7 +136,7 @@
         </section>
         <section>
           <h3>DevOps & Infrastructure Technologies:</h3>
-          <span> CircleCI, Docker, Kubernetes, Google Cloud Platform</span>
+          <span> CircleCI, Docker, Kubernetes</span>
         </section>
       </div>
     </section>
