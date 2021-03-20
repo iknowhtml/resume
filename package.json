@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "sleep 5s && open http://localhost:8080 & NODE_ENV=development nodemon --watch webpack.config.babel.js --exec \"webpack-dev-server --watch\"",
-    "build": "yarn clean && NODE_ENV=production webpack --progress --colors --mode production && node utils/build_pdf && rm dist/index.js",
+    "build": "yarn clean && NODE_ENV=production webpack --progress --color --mode production && node utils/build_pdf && rm dist/index.js",
     "deploy": "gh-pages -d dist",
     "clean": "rm -rf dist/*",
     "lint": "eslint \"src/**.js\" \"utils/**\""
