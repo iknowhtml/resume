@@ -20,15 +20,10 @@ const generatePdf = async () => {
     console.log('generating pdf...');
     console.log('writing pdf to disk...');
 
-    const defaultMargin = '0.25in';
-
     await page.pdf({
       path: path.resolve('dist', "Aki Gao's Resume.pdf"),
       margin: {
-        top: defaultMargin,
-        right: defaultMargin,
-        bottom: defaultMargin,
-        left: defaultMargin,
+        top: 10,
       },
     });
 
