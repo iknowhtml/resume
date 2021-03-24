@@ -5,7 +5,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import TerserJSPlugin from 'terser-webpack-plugin';
 import OptimizeCssAssetsWebpackPlugin from 'optimize-css-assets-webpack-plugin';
 
-const webpackConfiguration = () => ({
+const webpackConfiguration = (_, { mode }) => ({
   entry: path.resolve('src', 'index.js'),
   output: {
     path: path.resolve('dist'),
@@ -43,29 +43,27 @@ const webpackConfiguration = () => ({
           },
         ],
       },
-      {
-        test: /favicon.png$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'favicon.png',
-            },
-          },
-        ],
-      },
     ],
   },
   // Configures Plugins
   plugins: [
     new HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      title: "Aki Gao's Resume",
-      filename: 'index.html',
-      template: path.resolve('src', 'index.ejs'),
-      environment: process.env.NODE_ENV,
+      template: path.resolve('src', 'index.html'),
+      meta: [
+        {
+          name: 'description',
+          content:
+            'Aki Gao is a software engineer with expertise in front-end, UX/UI and digital accessibility democratizing the Web at User1st.',
+        },
+        { name: 'author', content: 'Aki Gao' },
+        {
+          name: 'viewport',
+          content: 'width=device-width, height=device-height, initial-scale=1',
+        },
+      ],
       minify:
-        process.env.NODE_ENV === 'production'
+        mode === 'production'
           ? {
               collapseWhitespace: true,
               removeComments: true,
@@ -75,9 +73,7 @@ const webpackConfiguration = () => ({
               useShortDoctype: true,
             }
           : false,
-      hash: true,
-      //Prevents automatic injection of CSS & HTML into template.
-      inject: false,
+      hash: mode === 'production',
     }),
     new MiniCssExtractPlugin({
       filename: 'style.css',
@@ -106,6 +102,8 @@ const webpackConfiguration = () => ({
     // Sets and watches the content base so that dev server will reload page on HTML changes
     contentBase: path.resolve('src'),
     watchContentBase: true,
+    // Opens default browser when dev server i ran
+    open: true,
   },
 });
 
