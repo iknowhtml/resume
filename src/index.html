@@ -3,19 +3,8 @@
 
 <head>
   <title>
-    <%= htmlWebpackPlugin.options.title %>
+    Aki Gao's Resume
   </title>
-  <link href="favicon.png" rel="shortcut icon" />
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale = 1" />
-  <% for (key in htmlWebpackPlugin.files.css) { %>
-    <link href="<%= htmlWebpackPlugin.files.css[key] %>" rel="stylesheet" />
-    <% } %>
-      <% if(htmlWebpackPlugin.options.environment==='development' ) { %>
-        <% for(key in htmlWebpackPlugin.files.chunks) { %>
-          <script src="<%= htmlWebpackPlugin.files.chunks[key].entry %>"></script>
-          <% } %>
-            <% } %>
 </head>
 
 <body>
@@ -24,7 +13,8 @@
       <h1 aria-label="Aki Gao's Resume">Aki Gao</h1>
       <h2 class='sr-only'>Contact Information</h2>
       <div id="info">
-        (703) 901-0568 | aki.gao@user1st.com | iknowht.ml | github.com/iknowhtml
+        <a href="tel:1-703-901-0568">(703) 901-0568</a> | <a href="mailto:aki.gao@user1st.com">aki.gao@user1st.com</a> |
+        <a href="https://iknowht.ml">iknowht.ml</a> | <a href="https://github.com/iknowhtml">github.com/iknowhtml</a>
       </div>
     </header>
     <section id="profile">
