@@ -1,4 +1,5 @@
 module.exports = {
+  parser: "@babel/eslint-parser",  
   parserOptions: {
     ecmaVersion: 9,
     sourceType: 'module',
@@ -11,6 +12,7 @@ module.exports = {
   rules: {
     'prettier/prettier': ['error'],
     'no-console': 0,
+    ''
     'comma-dangle': ['error', 'only-multiline'],
   },
   env: {
