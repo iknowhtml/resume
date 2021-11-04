@@ -38,7 +38,9 @@ jobs:
       # run build script
       - run: 
           name: Build project
-          command: yarn build
+          command: | 
+            export NODE_OPTIONS=--openssl-legacy-provider
+            yarn build
 
       - run:
           name: Deploy to Github Pages
