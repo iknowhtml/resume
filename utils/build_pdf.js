@@ -28,7 +28,7 @@ try {
     { top: '0.25in' }
   );
   const buffer = await page.pdf({
-    path: path.resolve('utils', "Aki Gao's Resume.pdf"),
+    path: path.resolve('dist', "Aki Gao's Resume.pdf"),
     margin,
   });
 
