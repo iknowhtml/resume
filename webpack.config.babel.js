@@ -94,16 +94,9 @@ const webpackConfiguration = (_, { mode }) => ({
     port: 8080,
     // Enables webpack's Hot Module Replacement feature.
     hot: true,
-    // Shows a full-screen overlay in the browser when there are compiler errors or warnings. Disabled by default.
-    overlay: {
-      warnings: true,
-      errors: true,
-    },
-    // Sets and watches the content base so that dev server will reload page on HTML changes
-    contentBase: path.resolve('src'),
-    watchContentBase: true,
     // Opens default browser when dev server i ran
     open: true,
+    watchFiles: ['src/**/*'],
   },
 });
 
