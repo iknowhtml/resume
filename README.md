@@ -1,4 +1,4 @@
-# Aki Gao's Resume
+# Aki Gao's Resume &middot; [![Build and Deploy Personal Site](https://github.com/iknowhtml/resume/actions/workflows/build-and-deploy.yml/badge.svg)](https://github.com/iknowhtml/iknowhtml.github.io/actions/workflows/build-and-deploy.yml)
 Aki Gao's resume written in HTML & CSS with PDF generation. Compiled with Webpack, and deployed to Github pages using CircleCI.
 
 ## To Use
