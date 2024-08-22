@@ -54,7 +54,7 @@ const webpackConfiguration = (_, { mode }) => ({
         {
           name: 'description',
           content:
-            'Aki Gao is a software engineer with expertise in front-end, UX/UI and digital accessibility democratizing the Web at User1st.',
+            'Aki Gao is an Staff Software Engineer with a passion for solving difficult technical problems, delivering delightful products that empower people and leading high performing engineering teams with expertise in full-stack web application & NPM package development in TypeScript with a focus on digital asset custody, web3 & accessibility.',
         },
         { name: 'author', content: 'Aki Gao' },
         {
