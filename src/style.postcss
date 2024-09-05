@@ -4,10 +4,21 @@
   margin: 0;
 }
 
+@font-face {
+  font-family: 'BB';
+  src: url('./fonts/BB-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'BB';
+  src: url('./fonts/BB-CondBold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
 html {
   height: 100%;
   box-sizing: border-box;
-  font-family: 'Raleway', sans-serif;
+  font-family: BB, sans-serif;
 
   @media only screen and (max-width: 640px) {
     font-size: 11px;
@@ -75,10 +86,10 @@ h2 {
 
 h1 {
   text-transform: uppercase;
-  font-weight: 500;
   font-size: 1.75rem;
   padding-top: 0.5rem;
   padding-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
 h2 {
