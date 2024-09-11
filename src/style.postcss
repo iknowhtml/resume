@@ -36,8 +36,9 @@ html {
 }
 
 body {
-  height: 100%;
+  height: --webkit-fill-available;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #f0f0f0;
@@ -176,5 +177,14 @@ span {
 #work-experience {
   & section:not(:last-child) {
     margin-bottom: 0.75rem;
+  }
+}
+
+#resume-download-link {
+  padding: 1.25rem;
+  text-decoration: underline;
+
+  @media print {
+    display: none;
   }
 }
