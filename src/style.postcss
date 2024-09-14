@@ -59,7 +59,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 20mm 20mm;
-  margin: auto;
+  margin: auto 0;
   max-width: 875px;
   background-color: white;
   box-shadow: 0 0 6px #ccc;
@@ -67,8 +67,8 @@ body {
   @media print {
     height: 100vh;
     box-shadow: none;
-    padding: 0 15mm;
   }
+
   @media (max-width: 700px) {
     padding: 15mm 15mm;
   }
@@ -82,22 +82,21 @@ h2 {
   border-top: 1px solid black;
   border-bottom: 1.5px solid black;
   text-align: center;
+  /* letter-spacing: 0.05em; */
+  text-transform: uppercase;
   font-weight: normal;
 }
 
 h1 {
-  text-transform: uppercase;
+  /* letter-spacing: 0.025em; */
+  padding: 0.25rem 0;
   font-size: 1.75rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.25rem;
-  margin-bottom: 0.5rem;
 }
 
 h2 {
   /* Styling for headers not nested in the header section */
   font-size: 1em;
-  padding-top: 0.1rem;
-  padding-bottom: 0.075em;
+  padding: 0.125rem 0;
 }
 
 a {
@@ -147,8 +146,7 @@ span {
 #info {
   text-align: center;
   font-size: 0.75rem;
-  padding-top: 0.2rem;
-  padding-bottom: 0.1rem;
+  padding: 0.15rem 0;
 }
 
 #profile {
@@ -171,6 +169,8 @@ span {
     display: block;
     line-height: 1rem;
     font-size: 0.75rem;
+    padding: 0.125rem 0;
+    font-style: italic;
   }
 }
 
