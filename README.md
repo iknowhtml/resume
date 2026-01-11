@@ -6,9 +6,9 @@ To set up the project, run the following command below:
 ```bash
 > git clone https://github.com/iknowhtml/resume.git
 > cd resume
-> yarn install
+> pnpm install
 `
 ```
-To run in development mode, run `yarn start`.
-To build the project, run `yarn build`.
-To build the resume PDF, run `yarn build:pdf`.
+To run in development mode, run `pnpm start`.
+To build the project, run `pnpm build`.
+To build the resume PDF, run `pnpm build:pdf`.
