@@ -17,10 +17,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           cache: 'pnpm'
+      - name: Set up Chrome
+        uses: browser-actions/setup-chrome@v1
+        id: setup-chrome
       - name: Install Dependencies
         run: pnpm install
       - name: Build
         run: pnpm build
+        env:
+          PUPPETEER_EXECUTABLE_PATH: ${{ steps.setup-chrome.outputs.chrome-path }}
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
