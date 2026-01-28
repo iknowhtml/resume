@@ -44,7 +44,7 @@ await page.waitForTimeout(500);
 
 await page.pdf({
   path: path.join(distPath, "Aki Gao's Resume.pdf"),
-  margin: { top: '15mm', right: '15mm', left: '15mm' },
+  margin: { top: '15mm', right: '15mm', bottom: '10mm', left: '15mm' },
   printBackground: true,
 });
 
