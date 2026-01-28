@@ -50,18 +50,6 @@ const webpackConfiguration = (_, { mode }) => ({
     new HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve('src', 'index.html'),
-      meta: [
-        {
-          name: 'description',
-          content:
-            'Aki Gao is an Staff Software Engineer with a passion for solving difficult technical problems, delivering delightful products that empower people and leading high performing engineering teams with expertise in full-stack web application & NPM package development in TypeScript with a focus on digital asset custody, web3 & accessibility.',
-        },
-        { name: 'author', content: 'Aki Gao' },
-        {
-          name: 'viewport',
-          content: 'width=device-width, height=device-height, initial-scale=1',
-        },
-      ],
       minify:
         mode === 'production'
           ? {
