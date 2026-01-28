@@ -39,13 +39,11 @@ await page.goto('http://localhost:4173/', {
   waitUntil: 'networkidle',
 });
 
-// Wait a bit for fonts to load
-await page.waitForTimeout(500);
 
 await page.pdf({
   path: path.join(distPath, "Aki Gao's Resume.pdf"),
-  margin: { top: '15mm', right: '15mm', bottom: '10mm', left: '15mm' },
-  printBackground: true,
+  format: 'Letter',
+  margin: { top: '10mm', right: '8mm', bottom: '8mm', left: '8mm' },
 });
 
 await browser.close();
