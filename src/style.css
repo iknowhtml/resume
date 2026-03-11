@@ -22,7 +22,7 @@ html {
 
 
   @media print {
-    font-size: 13.5px;
+    font-size: 14px;
   }
 }
 
@@ -39,7 +39,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #f0f0f0;
-
+  font-size: 0.75rem;
   @media print {
     background-color: white;
   }
@@ -94,7 +94,7 @@ h1 {
 
 h2 {
   /* Styling for headers not nested in the header section */
-  font-size: 1em;
+  font-size: 1rem;
   padding: 0.125rem 0;
 }
 
@@ -107,7 +107,6 @@ a {
 
   & li {
     font-size: 0.75rem;
-    line-height: 1.25em;
     list-style-type: none;
     position: relative;
     margin-top: 0.5em;
@@ -116,9 +115,13 @@ a {
 
     &:before {
       content: '\2022';
-      font-size: 2em;
+      font-size: 1.5em;
+      line-height: 1;
       position: absolute;
-      left: -0.5em;
+      /* offset bullet to the left */
+      left: -0.75em;
+      /* offset bullet up */
+      top: -0.01em;
     }
   }
 }
@@ -144,16 +147,10 @@ span {
 
 #info {
   text-align: center;
-  font-size: 0.75rem;
   padding: 0.15rem 0;
 }
 
-#profile {
-  & p {
-    font-size: 0.75rem;
-    line-height: 1.4em;
-  }
-}
+
 
 #skills {
   & .section-container {
@@ -167,7 +164,6 @@ span {
   & section h3 ~ span {
     display: block;
     line-height: 1rem;
-    font-size: 0.75rem;
     padding: 0.125rem 0;
     font-style: italic;
   }
